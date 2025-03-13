@@ -45,7 +45,7 @@ function Register() {
       if (response.ok) {
         notify({
           type: "success",
-          message: "Ro‘yxatdan o‘tish muvaffaqiyatli!",
+          message: "Ro'yxatdan o'tish muvaffaqiyatli!",
         });
         navigate("/");
       } else {
@@ -61,70 +61,208 @@ function Register() {
   };
 
   return (
-    <section className="bg-blue-600">
-      <div className="w-[90%] h-screen m-auto flex items-center justify-center">
-        <div className="w-[50%] bg-[#FFF] h-auto rounded-lg p-5 flex flex-col gap-7 justify-center items-center">
-          <h1 className="text-center text-[22px] font-medium">Register</h1>
-          <form
-            className="flex flex-col gap-7 w-[90%]"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className="flex items-start justify-between gap-5">
-              <div className="flex flex-col gap-7 w-full">
-                <Input
-                  required
-                  className="h-[45px] rounded-[30px] text-[17px]"
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Inter your firstname"
-                />
-                <Input
-                  required
-                  className="h-[45px] rounded-[30px] text-[17px]"
-                  onChange={(e) => setLastName(e.target.value)}
-                  placeholder="Inter your lastname"
-                />
-                <Input
-                  required
-                  className="h-[45px] rounded-[30px] text-[17px]"
-                  onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Inter your username"
-                />
-              </div>
-              <div className="flex flex-col gap-7 w-full">
-                <Input
-                  required
-                  type="email"
-                  className="h-[45px] rounded-[30px] text-[17px]"
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Inter your email"
-                />
-                <Input
-                  required
-                  type="password"
-                  className="h-[45px] rounded-[30px] text-[17px]"
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Inter your password"
-                />
-                <select
-                  onChange={(e) => setSelectValue(e.target.value)}
-                  className="w-[150px] h-[40px] px-3 border border-gray-300 rounded-[30px] bg-white shadow-sm focus:outline-none text-sm"
-                >
-                  <option value="">Select an option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
+    <section className="bg-gradient-to-r from-blue-600 to-blue-400 min-h-screen">
+      <div className="w-full max-w-5xl mx-auto px-4 py-12 min-h-screen flex items-center justify-center">
+        <div className="w-full md:w-4/5 lg:w-3/4 bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            <div className="hidden md:block md:w-2/5 bg-gradient-to-br from-blue-500 to-indigo-600 p-8 text-white">
+              <div className="h-full flex flex-col justify-between">
+                <div>
+                  <h2 className="text-3xl font-bold mb-6">Xush kelibsiz!</h2>
+                  <p className="mb-8">
+                    Bizning platformamizga a'zo bo'ling va barcha
+                    imkoniyatlardan foydalaning.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p>Tezkor va oson ro'yxatdan o'tish</p>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p>Xavfsiz ma'lumotlar saqlash</p>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p>24/7 mijozlar xizmati</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <Button
-              onClick={getValue}
-              type="primary"
-              className="w-full h-[45px] rounded-[30px]"
-            >
-              Send
-            </Button>
-          </form>
+            <div className="w-full md:w-3/5 p-8">
+              <div className="mb-6 text-center">
+                <h1 className="text-2xl font-bold text-gray-800">
+                  Ro'yxatdan o'tish
+                </h1>
+                <p className="text-gray-600 mt-2">
+                  Barcha imkoniyatlardan foydalanish uchun hisob yarating
+                </p>
+              </div>
+
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="firstname"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Ismingiz
+                    </label>
+                    <Input
+                      id="firstname"
+                      required
+                      className="h-11 rounded-lg text-base"
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Ismingizni kiriting"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="lastname"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Familiyangiz
+                    </label>
+                    <Input
+                      id="lastname"
+                      required
+                      className="h-11 rounded-lg text-base"
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Familiyangizni kiriting"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="username"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Foydalanuvchi nomi
+                    </label>
+                    <Input
+                      id="username"
+                      required
+                      className="h-11 rounded-lg text-base"
+                      onChange={(e) => setUserName(e.target.value)}
+                      placeholder="Foydalanuvchi nomini kiriting"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Email
+                    </label>
+                    <Input
+                      id="email"
+                      required
+                      type="email"
+                      className="h-11 rounded-lg text-base"
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email manzilingizni kiriting"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="password"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Parol
+                    </label>
+                    <Input
+                      id="password"
+                      required
+                      type="password"
+                      className="h-11 rounded-lg text-base"
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Parolingizni kiriting"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="branch"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      Bo'lim
+                    </label>
+                    <select
+                      id="branch"
+                      onChange={(e) => setSelectValue(e.target.value)}
+                      className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      <option value="">Fillialni tanlang</option>
+                      <option value="1">Bo'lim 1</option>
+                      <option value="2">Bo'lim 2</option>
+                      <option value="3">Bo'lim 3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <Button
+                    onClick={getValue}
+                    type="primary"
+                    className="w-full h-12 rounded-lg text-base font-medium bg-blue-600 hover:bg-blue-700 border-none shadow-md"
+                  >
+                    Ro'yxatdan o'tish
+                  </Button>
+                </div>
+
+                <div className="text-center text-gray-600 text-sm mt-4">
+                  Allaqachon hisobingiz bormi?{" "}
+                  <a href="/" className="text-blue-600 hover:underline">
+                    Kirish
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
