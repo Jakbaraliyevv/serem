@@ -20,7 +20,6 @@ export const useAxios = () => {
 
       return res.data;
     } catch (error) {
-      console.error("Axios Xatolik:", error);
       throw error;
     }
   };
