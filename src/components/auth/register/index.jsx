@@ -47,6 +47,7 @@ function Register() {
           type: "success",
           message: "Ro'yxatdan o'tish muvaffaqiyatli!",
         });
+        localStorage.setItem("register", JSON.stringify(data));
         navigate("/");
       } else {
         notify({

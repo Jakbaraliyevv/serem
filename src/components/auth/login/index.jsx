@@ -3,11 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import notificationApi from "../../../generic/notify";
 import { useState } from "react";
 import "@ant-design/v5-patch-for-react-19";
+import { useAxios } from "../../../hooks/axios";
 
 function Login() {
   const notify = notificationApi();
   const navigate = useNavigate();
-
+  const axios = useAxios();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,6 +17,10 @@ function Login() {
       username_or_email: userName,
       password,
     };
+
+    
+
+
 
     if (!userName || !password) {
       notify({
@@ -35,13 +40,13 @@ function Login() {
       });
 
       const result = await response.json();
-
+      console.log(result);
       if (response.ok) {
         notify({
           type: "login",
         });
 
-        localStorage.setItem("access_token", result.access_token);
+        localStorage.setItem("token", result.access_token);
 
         navigate("/dashboard");
       } else {
@@ -53,7 +58,6 @@ function Login() {
       console.error("Login Xatosi:", error);
       notify({
         type: "error",
-        message: "Server bilan bog'lanishda xatolik yuz berdi!",
       });
     }
   };
