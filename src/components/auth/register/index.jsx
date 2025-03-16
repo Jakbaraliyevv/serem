@@ -1,20 +1,21 @@
 import { Button, Input } from "antd";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 import notificationApi from "../../../generic/notify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "@ant-design/v5-patch-for-react-19";
+import { useAxios } from "../../../hooks/axios";
 
 function Register() {
   const notify = notificationApi();
   const navigate = useNavigate();
-
+  const axios = useAxios();
   const [userName, setUserName] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [selectValue, setSelectValue] = useState("");
-
+  const [data, setData] = useState([]);
   const getValue = async () => {
     if (!userName || !password || !email || !selectValue) {
       notify({ type: "fullData" });
@@ -61,6 +62,15 @@ function Register() {
     }
   };
 
+  useEffect(() => {
+    axios({
+      url: "/register/",
+      method: "GET",
+    })
+      .then((data) => setData(data.data))
+      .catch((error) => console.log(error));
+  }, []);
+  console.log(data);
   return (
     <section className="bg-gradient-to-r from-blue-600 to-blue-400 min-h-screen">
       <div className="w-full max-w-5xl mx-auto px-4 py-12 min-h-screen flex items-center justify-center">
@@ -238,9 +248,11 @@ function Register() {
                       className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                       <option value="">Fillialni tanlang</option>
-                      <option value="1">Bo'lim 1</option>
-                      <option value="2">Bo'lim 2</option>
-                      <option value="3">Bo'lim 3</option>
+                      {data?.map((value) => (
+                        <option value={value.id}>{value.name}</option>
+                      ))}
+                      {/* <option value="2">Bo'lim 2</option>
+                      <option value="3">Bo'lim 3</option> */}
                     </select>
                   </div>
                 </div>
