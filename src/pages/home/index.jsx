@@ -1,11 +1,13 @@
 import React from "react";
-import Login from "../../components/auth/login";
+import Navbar from "../../components/navbar";
+import Showcase from "../../components/showcase";
 
 function Home() {
   return (
-    <>
-      <Login />
-    </>
+    <div>
+      <Navbar />
+      <Showcase />
+    </div>
   );
 }
 

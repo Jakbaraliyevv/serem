@@ -7,7 +7,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
-import BranchStats from "./main";
+import BranchStats from "./admin";
 
 const { Header, Sider, Content } = Layout;
 
