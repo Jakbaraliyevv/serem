@@ -49,7 +49,7 @@ function Register() {
           message: "Ro'yxatdan o'tish muvaffaqiyatli!",
         });
         localStorage.setItem("register", JSON.stringify(data));
-        navigate("/");
+        navigate("/login");
       } else {
         notify({
           type: "error",
@@ -269,7 +269,7 @@ function Register() {
 
                 <div className="text-center text-gray-600 text-sm mt-4">
                   Allaqachon hisobingiz bormi?{" "}
-                  <a href="/" className="text-blue-600 hover:underline">
+                  <a href="/login" className="text-blue-600 hover:underline">
                     Kirish
                   </a>
                 </div>

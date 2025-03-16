@@ -48,7 +48,7 @@ function Login() {
 
         localStorage.setItem("token", result.access_token);
 
-        navigate("/dashboard");
+        navigate("/");
       } else {
         notify({
           type: "notFound",

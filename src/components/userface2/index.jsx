@@ -30,11 +30,11 @@ const BenzinZapravkaVisual = () => {
             <a
               href="#"
               className={`hover:text-blue-200 transition-colors flex items-center ${
-                activeView === "profile"
+                activeView === "profile2"
                   ? "text-white font-bold"
                   : "text-blue-100"
               }`}
-              onClick={() => setActiveView("profile")}
+              onClick={() => setActiveView("profile2")}
             >
               <i className="fas fa-user-circle mr-1"></i> Profil
             </a>
@@ -85,10 +85,10 @@ const BenzinZapravkaVisual = () => {
               <a
                 href="#"
                 className={`text-white hover:text-blue-200 transition-colors py-2 flex items-center ${
-                  activeView === "profile" ? "font-bold" : ""
+                  activeView === "profile2" ? "font-bold" : ""
                 }`}
                 onClick={() => {
-                  setActiveView("profile");
+                  setActiveView("profile2");
                   setMobileMenuOpen(false);
                 }}
               >
@@ -381,7 +381,7 @@ const BenzinZapravkaVisual = () => {
           </>
         )}
 
-        {activeView === "profile" && (
+        {activeView === "profile2" && (
           <>
             <h1 className="text-2xl font-bold mb-6">Mening profilim</h1>
 

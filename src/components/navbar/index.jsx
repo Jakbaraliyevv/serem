@@ -1,45 +1,45 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
-  const [activeView, setActiveView] = useState("dashboard");
+  const location = useLocation(); // Hozirgi sahifa URL'ni olish
+
   return (
     <section className="bg-[#2563eb] py-3 text-white shadow-md sticky top-0 z-29">
       <div className="w-[90%] m-auto flex items-center justify-between">
         <div>
-          <h1 className="font-bold text-[20px]">BenzinServis</h1>
+          <Link to={"/"} className="font-bold text-[20px]">
+            BenzinServis
+          </Link>
         </div>
         <div className="flex items-center gap-[40px]">
           <Link
             className={`hover:text-blue-200 transition-colors flex items-center ${
-              activeView === "dashboard"
+              location.pathname === "/"
                 ? "text-white font-bold"
                 : "text-blue-100"
             }`}
             to={"/"}
-            onClick={() => setActiveView("dashboard")}
           >
             Bosh sahifa
           </Link>
           <Link
             className={`hover:text-blue-200 transition-colors flex items-center ${
-              activeView === "profile"
+              location.pathname === "/profile"
                 ? "text-white font-bold"
                 : "text-blue-100"
             }`}
             to={"/profile"}
-            onClick={() => setActiveView("profile")}
           >
             Profil
           </Link>
           <Link
             className={`hover:text-blue-200 transition-colors flex items-center ${
-              activeView === "buyurtmalar"
+              location.pathname === "/buyurtmalar"
                 ? "text-white font-bold"
                 : "text-blue-100"
             }`}
             to={"/buyurtmalar"}
-            onClick={() => setActiveView("buyurtmalar")}
           >
             Buyurtmalar
           </Link>

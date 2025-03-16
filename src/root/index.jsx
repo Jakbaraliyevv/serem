@@ -5,23 +5,37 @@ import BenzinZapravkaVisual from "../components/userFace2";
 import Login from "../components/auth/login";
 import Home from "../pages/home";
 import Layout from "../outlet";
+import Profile from "../pages/profile";
+import Buyurtmalar from "../pages/buyurtmalar";
 
 export const root = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
   {
     path: "/",
     element: <Layout />,
     children: [
       {
         index: true,
-        element: <Login />,
-      },
-      {
-        path: "home",
         element: <Home />,
       },
       {
-        path: "register",
-        element: <Register />,
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "profile2",
+        element: <BenzinZapravkaVisual />,
+      },
+      {
+        path: "buyurtmalar",
+        element: <Buyurtmalar />,
       },
       {
         path: "dashboard",
