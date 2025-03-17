@@ -8,6 +8,7 @@ import Layout from "../outlet";
 import Profile from "../pages/profile";
 import Buyurtmalar from "../pages/buyurtmalar";
 import OrderPost from "../components/hisobni-toldirish";
+import BenzinTurlari from "../components/benzin-turlari";
 
 export const root = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const root = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "dashboard",
+    path: "/dashboard",
     element: <Dashboard />,
   },
   {

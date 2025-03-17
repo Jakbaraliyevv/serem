@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import BranchStats from "./admin";
+import BenzinTurlari from "../benzin-turlari";
 
 const { Header, Sider, Content } = Layout;
 
@@ -32,7 +33,11 @@ const Dashboard = () => {
       case "2":
         return <div></div>;
       case "3":
-        return <div></div>;
+        return (
+          <div>
+            <BenzinTurlari />
+          </div>
+        );
       default:
         return <div>Bo'lim tanlang</div>;
     }
@@ -78,8 +83,7 @@ const Dashboard = () => {
             },
             {
               key: "3",
-              icon: <UploadOutlined />,
-              label: "Yuklash",
+              label: "Benzin turlari",
             },
           ]}
         />
