@@ -45,8 +45,7 @@ function Register() {
 
       if (response.ok) {
         notify({
-          type: "success",
-          message: "Ro'yxatdan o'tish muvaffaqiyatli!",
+          type: "register",
         });
         localStorage.setItem("register", JSON.stringify(data));
         navigate("/login");

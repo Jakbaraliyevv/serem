@@ -39,7 +39,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <section className="bg-[#2563eb] py-3 text-white shadow-md sticky top-0 z-29">
+      <section className="bg-[#2563eb] py-3 text-white shadow-md navbar2">
         <div className="w-[90%] m-auto flex items-center justify-between">
           <div>
             <Link to={"/"} className="font-bold text-[20px]">

@@ -19,6 +19,10 @@ export const root = createBrowserRouter([
     element: <Register />,
   },
   {
+    path: "dashboard",
+    element: <Dashboard />,
+  },
+  {
     path: "/",
     element: <Layout />,
     children: [
@@ -42,10 +46,7 @@ export const root = createBrowserRouter([
         path: "hisobni-toldirish",
         element: <OrderPost />,
       },
-      {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
+
       {
         path: "userface2",
         element: <BenzinZapravkaVisual />,

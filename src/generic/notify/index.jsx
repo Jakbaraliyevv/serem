@@ -11,6 +11,11 @@ const notificationApi = () => {
         return notification.success({
           message: "Tizimga muvaffaqiyatli kirdingiz",
         });
+      case "register":
+        return notification.success({
+          message: "Register muvaffaqiyatli",
+        });
+
       case "notFound":
         return notification.error({
           message: "Foydalanuvchi topilmadi!",

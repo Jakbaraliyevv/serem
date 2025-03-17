@@ -1,101 +1,130 @@
 import { Input } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAxios } from "../../hooks/axios";
 
 function ProfileComponents() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const userData = JSON.parse(localStorage.getItem("user"));
+  const axios = useAxios();
+
+  useEffect(() => {
+    axios({ url: "/user-data/", method: "GET" })
+      .then((res) => {
+        setData(res);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
+
+  const findUser =
+    data.find(
+      (value) =>
+        value.email === userData?.email || value.username === userData?.username
+    ) || {};
+
+  const [name, setName] = useState(findUser?.first_name || "");
+  const [lastName, setLastName] = useState(findUser?.last_name || "");
+  const [userName, setUsername] = useState(findUser?.username || "");
+  const [email, setEmail] = useState(findUser?.email || "");
+
+  useEffect(() => {
+    setName(findUser?.first_name || "");
+    setLastName(findUser?.last_name || "");
+    setUsername(findUser?.username || "");
+    setEmail(findUser?.email || "");
+  }, [findUser]);
+
+  if (loading) {
+    return <p className="text-center text-gray-500">Yuklanmoqda...</p>;
+  }
+
+  const changeProfile = () => {
+    const data = {
+      first_name: name,
+      last_name: lastName,
+      username: userName,
+      email,
+    };
+    axios({
+      url: "/edit-profile/",
+      method: "POST",
+      data,
+    })
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
   return (
-    <section className="w-[90%] m-auto py-5 ">
+    <section className="w-[90%] m-auto py-5">
       <div>
         <h1 className="text-[25px] font-bold mb-6">Mening profilim</h1>
       </div>
       <div className="flex items-start justify-between gap-7">
         <div className="w-[70%] bg-white rounded-lg shadow py-11 p-7">
-          <h2 className="pb-9 text-[22px] font-semibold  flex items-center">
+          <h2 className="pb-9 text-[22px] font-semibold">
             Shaxsiy ma'lumotlar
           </h2>
-
-          <div className=" flex gap-5">
+          <div className="flex gap-5">
             <div className="flex w-full flex-col gap-5">
               <div className="flex flex-col gap-1">
-                <label
-                  className=" text-gray-700 text-[17px] font-bold mb-2"
-                  htmlFor="fullname"
-                >
+                <label className="text-gray-700 text-[17px] font-bold mb-2">
                   Ismi
                 </label>
-                <Input
-                  className=" border rounded w-full p-2 text-gray-700  "
-                  id="name"
-                  type="text"
-                  defaultValue="Aziz"
-                />
+                <Input value={name} onChange={(e) => setName(e.target.value)} />
               </div>
               <div className="flex flex-col gap-1">
-                <label
-                  className=" text-gray-700 text-[17px] font-bold mb-2"
-                  htmlFor="fullname"
-                >
+                <label className="text-gray-700 text-[17px] font-bold mb-2">
                   Familiya
                 </label>
                 <Input
-                  className=" border rounded w-full p-2 text-gray-700  "
-                  id="lastName"
-                  type="text"
-                  defaultValue="Jakbaraliyev"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
             </div>
             <div className="flex w-full flex-col gap-5">
               <div className="flex flex-col gap-1">
-                <label
-                  className=" text-gray-700 text-[17px] font-bold mb-2"
-                  htmlFor="fullname"
-                >
-                  Telefon raqami
+                <label className="text-gray-700 text-[17px] font-bold mb-2">
+                  Username
                 </label>
                 <Input
-                  className=" border rounded w-full p-2 text-gray-700  "
-                  id="phone"
-                  type="text"
-                  defaultValue="+9982006469"
+                  value={userName}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <label
-                  className=" text-gray-700 text-[17px] font-bold mb-2"
-                  htmlFor="fullname"
-                >
+                <label className="text-gray-700 text-[17px] font-bold mb-2">
                   Email
                 </label>
                 <Input
-                  className=" border rounded w-full p-2 text-gray-700  "
-                  id="email"
-                  type="text"
-                  defaultValue="azizjakbaraliyev17@gmail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
           </div>
           <div className="flex justify-end mt-6">
             <button
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
+              onClick={changeProfile}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
               Saqlash
             </button>
           </div>
         </div>
-
         <div className="w-[30%]">
           <div className="bg-white rounded-lg shadow p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4">Hisobingiz</h2>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-blue-600 mb-4">
-                150,000 so'm
-              </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
-                Hisobni to'ldirish
-              </button>
-            </div>
+            <p className="text-3xl font-bold text-blue-600 mb-4">
+              150,000 so'm
+            </p>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+              Hisobni to'ldirish
+            </button>
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Xavfsizlik</h2>
