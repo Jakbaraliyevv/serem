@@ -8,7 +8,6 @@ import { useAxios } from "../../../hooks/axios";
 function Login() {
   const notify = notificationApi();
   const navigate = useNavigate();
-  const axios = useAxios();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,10 +16,6 @@ function Login() {
       username_or_email: userName,
       password,
     };
-
-    
-
-
 
     if (!userName || !password) {
       notify({
@@ -47,6 +42,9 @@ function Login() {
         });
 
         localStorage.setItem("token", result.access_token);
+        localStorage.setItem("user", JSON.stringify(result.user));
+
+        console.log(result, "res");
 
         navigate("/");
       } else {

@@ -36,7 +36,7 @@ function Zaprafkalar() {
                 </span>
               </td>
               <td className="py-4 px-4 whitespace-nowrap">
-                <a href="#" className="text-blue-600 hover:text-blue-900">
+                <a href="/hisobni-toldirish" className="text-blue-600 hover:text-blue-900">
                   Zapravka qilish
                 </a>
               </td>
@@ -54,7 +54,7 @@ function Zaprafkalar() {
                 </span>
               </td>
               <td className="py-4 px-4 whitespace-nowrap">
-                <a href="#" className="text-blue-600 hover:text-blue-900">
+                <a href="/hisobni-toldirish" className="text-blue-600 hover:text-blue-900">
                   Zapravka qilish
                 </a>
               </td>

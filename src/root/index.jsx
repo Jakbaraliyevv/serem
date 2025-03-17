@@ -7,6 +7,7 @@ import Home from "../pages/home";
 import Layout from "../outlet";
 import Profile from "../pages/profile";
 import Buyurtmalar from "../pages/buyurtmalar";
+import OrderPost from "../components/hisobni-toldirish";
 
 export const root = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const root = createBrowserRouter([
       {
         path: "buyurtmalar",
         element: <Buyurtmalar />,
+      },
+      {
+        path: "hisobni-toldirish",
+        element: <OrderPost />,
       },
       {
         path: "dashboard",

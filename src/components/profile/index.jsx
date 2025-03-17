@@ -1,4 +1,4 @@
-import { Button, Input } from "antd";
+import { Input } from "antd";
 import React from "react";
 
 function ProfileComponents() {
@@ -99,9 +99,6 @@ function ProfileComponents() {
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Xavfsizlik</h2>
-            <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded w-full mb-2">
-              Parolni o'zgartirish
-            </button>
             <button className="bg-red-100 hover:bg-red-200 text-red-800 font-bold py-2 px-4 rounded w-full">
               Hisobni o'chirish
             </button>
