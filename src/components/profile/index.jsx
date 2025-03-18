@@ -5,8 +5,21 @@ import { useAxios } from "../../hooks/axios";
 function ProfileComponents() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [balanceData, setBalanceData] = useState(0);
   const userData = JSON.parse(localStorage.getItem("user"));
   const axios = useAxios();
+  // balanceni olish
+
+  useEffect(() => {
+    axios({
+      url: "/orders/create/",
+      method: "GET",
+    })
+      .then((data) => {
+        setBalanceData(data?.user_balance);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   useEffect(() => {
     axios({ url: "/user-data/", method: "GET" })
@@ -120,11 +133,8 @@ function ProfileComponents() {
           <div className="bg-white rounded-lg shadow p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4">Hisobingiz</h2>
             <p className="text-3xl font-bold text-blue-600 mb-4">
-              150,000 so'm
+              {Math.floor(balanceData)} so'm
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
-              Hisobni to'ldirish
-            </button>
           </div>
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Xavfsizlik</h2>

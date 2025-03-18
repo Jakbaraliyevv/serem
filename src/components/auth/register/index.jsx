@@ -1,5 +1,5 @@
 import { Button, Input } from "antd";
-import { data, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import notificationApi from "../../../generic/notify";
 import { useEffect, useState } from "react";
 import "@ant-design/v5-patch-for-react-19";
@@ -69,7 +69,7 @@ function Register() {
       .then((data) => setData(data.data))
       .catch((error) => console.log(error));
   }, []);
-  console.log(data);
+  console.log(data, "data");
   return (
     <section className="bg-gradient-to-r from-blue-600 to-blue-400 min-h-screen">
       <div className="w-full max-w-5xl mx-auto px-4 py-12 min-h-screen flex items-center justify-center">

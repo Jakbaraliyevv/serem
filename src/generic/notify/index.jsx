@@ -15,10 +15,17 @@ const notificationApi = () => {
         return notification.success({
           message: "Register muvaffaqiyatli",
         });
-
+      case "sucsess":
+        return notification.success({
+          message: "Buyurtma muvaffaqiyatli qilindi",
+        });
       case "notFound":
         return notification.error({
           message: "Foydalanuvchi topilmadi!",
+        });
+      case "error":
+        return notification.error({
+          message: "Xatolik topildi!",
         });
       default:
         return notification.info({
