@@ -125,7 +125,7 @@ function OrderPost() {
                 >
                   <option value="">Fillialni tanlang</option>
                   {data?.map((value) => (
-                    <option key={value.id} value={value.id}>
+                    <option key={value.id} value={value.name}>
                       {value.name}
                     </option>
                   ))}

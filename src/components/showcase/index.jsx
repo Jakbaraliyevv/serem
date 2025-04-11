@@ -67,6 +67,7 @@ function Showcase() {
       return;
     }
 
+    console.log(data, "data");
     axios({
       url: "/userbalance/create/",
       method: "POST",
@@ -147,7 +148,9 @@ function Showcase() {
               >
                 <option value="">Foydalanuvchi tanlang</option>
                 {data?.map((value) => (
-                  <option value={value.id}>{value.first_name}</option>
+                  <option key={value.id} value={console.log(value.id, "idd")}>
+                    {value.username}
+                  </option>
                 ))}
               </select>
             </div>

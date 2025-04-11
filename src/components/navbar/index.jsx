@@ -30,7 +30,7 @@ function Navbar() {
 
       console.log("Logout javobi:", response);
       setIsModalOpen(false); // Modalni yopish
-      navigate("/login"); // Login sahifasiga yo'naltirish
+      navigate("/login");   // Login sahifasiga yo'naltirish
     } catch (error) {
       console.error("Chiqish jarayonida xatolik:", error);
     }

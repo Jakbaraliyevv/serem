@@ -1,5 +1,9 @@
 import { notification } from "antd";
-
+notification.config({
+  top: 80, // notification ekrandan pastroqda ochilishi uchun
+  duration: 3, // notification 3 soniyadan keyin o‘chishi
+  style: { zIndex: 999999 }, // z-index qo‘shildi
+});
 const notificationApi = () => {
   const notify = ({ type }) => {
     switch (type) {
