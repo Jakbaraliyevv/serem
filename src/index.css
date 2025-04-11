@@ -17,3 +17,36 @@ select {
   outline: none;
 }
 
+@media (max-width: 540px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 12345;
+  }
+  .logoutBtn {
+    width: 60px !important;
+    height: 25px;
+    font-size: 11px !important;
+  }
+}
+
+.barss {
+  font-size: 17px !important;
+}
+
+.modal {
+  width: 80% !important;
+  font-size: 12px !important;
+}
+
+/* Modal ok va cancel tugmalarini boshqarish */
+.modal .ant-btn-primary {
+  width: 100px; /* Ok tugmasining kengligi */
+  font-size: 12px !important;
+}
+
+.modal .ant-btn {
+  width: 100px; /* Cancel tugmasining kengligi */
+  font-size: 12px !important;
+}

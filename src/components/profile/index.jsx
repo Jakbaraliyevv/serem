@@ -16,7 +16,7 @@ function ProfileComponents() {
       method: "GET",
     })
       .then((data) => {
-        setBalanceData(data?.user_balance);
+        console.log(data, "dataa");
       })
       .catch((error) => console.log(error));
   }, []);
@@ -71,6 +71,7 @@ function ProfileComponents() {
       .catch((error) => console.log(error));
   };
 
+  console.log(balanceData, "azizzzz");
   return (
     <section className="w-[90%] m-auto py-5">
       <div>

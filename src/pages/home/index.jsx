@@ -4,7 +4,7 @@ import Showcase from "../../components/showcase";
 function Home() {
   return (
     <div>
-      <Showcase />
+      {/* <Showcase /> */}
     </div>
   );
 }
