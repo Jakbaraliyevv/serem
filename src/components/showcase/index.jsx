@@ -144,7 +144,7 @@ function Showcase() {
           </div>
         </div>
 
-        <Zaprafkalar />
+        {/* <Zaprafkalar /> */}
       </div>
     </section>
   );

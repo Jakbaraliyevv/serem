@@ -73,37 +73,37 @@ function OrderPost() {
   };
 
   return (
-    <section className="min-h-screen bg-gray-100">
+    <section className="min-h-screen bg-gray-100 max-[768px]:text-[0.8em]">
       <div className="w-[90%] m-auto">
-        <h1 className="py-9 text-[22px] font-semibold">Buyurtma qilish</h1>
+        <h1 className="py-9 text-[1.4em] font-semibold">Buyurtma qilish</h1>
 
         <form
-          className="p-11 bg-[#FFF] shadow rounded-lg"
+          className="p-11 bg-[#FFF] shadow rounded-lg max-[600px]:p-5"
           onSubmit={handleSubmit}
         >
-          <div className="flex items-start justify-between m-auto gap-5">
-            <div className="w-full flex flex-col gap-5">
-              <div className="flex flex-col gap-1">
-                <label className="text-[17px] mb-2">Miqdori</label>
+          <div className="flex items-start justify-between m-auto gap-5 max-[600px]:flex-col  max-[600px]:text-[0.9em]">
+            <div className="w-full flex flex-col gap-5 ">
+              <div className="flex flex-col gap-1 ">
+                <label className="text-[1em] mb-2">Miqdori</label>
                 <Input
                   onChange={handleChange}
                   name="quantity"
                   type="number"
                   min="1"
                   step="1"
-                  className="w-full h-11 px-3 border text-[15px] font-medium border-gray-300 rounded-lg bg-white shadow-sm"
+                  className="w-full h-11 px-3 border text-[1em] font-medium border-gray-300 rounded-lg bg-white shadow-sm max-[600px]:h-8"
                   placeholder="Miqdorini kiriting"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-[17px] font-medium text-gray-700">
+                <label className="text-[1em] font-medium text-gray-700">
                   Benzin turi
                 </label>
                 <select
                   onChange={handleChange}
                   name="benzin_brand"
-                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm"
+                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm max-[600px]:h-8"
                 >
                   <option value="">Benzin tanlang</option>
                   {benzinChoise?.map((value) => (
@@ -115,13 +115,13 @@ function OrderPost() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[17px] font-medium text-gray-700">
+                <label className="text-[1em] font-medium text-gray-700">
                   Fillial
                 </label>
                 <select
                   onChange={handleChange}
                   name="branch"
-                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm"
+                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm max-[600px]:h-8"
                 >
                   <option value="">Fillialni tanlang</option>
                   {data?.map((value) => (
@@ -135,13 +135,13 @@ function OrderPost() {
 
             <div className="w-full flex flex-col gap-5">
               <div className="space-y-2">
-                <label className="text-[17px] font-medium text-gray-700">
+                <label className="text-[1em] font-medium text-gray-700">
                   Tolov turi
                 </label>
                 <select
                   onChange={handleChange}
                   name="payment_method"
-                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm"
+                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm max-[600px]:h-8 "
                 >
                   <option value="">To'lov turini tanlang</option>
                   <option value="cash">Naqd pul</option>
@@ -149,26 +149,26 @@ function OrderPost() {
               </div>
 
               <div className="flex flex-col gap-1">
-                <label className="text-[17px] mb-2">Jami narxi</label>
+                <label className="text-[1em] mb-2">Jami narxi</label>
                 <Input
                   onChange={handleChange}
                   name="total_price"
                   min="1"
                   type="number"
                   step="1"
-                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm text-[15px] font-medium"
+                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm text-[15px] font-medium max-[600px]:h-8"
                   placeholder="Jami narxini kiriting"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-[17px] font-medium text-gray-700">
+                <label className="text-[1em] font-medium text-gray-700">
                   Status
                 </label>
                 <select
                   onChange={handleChange}
                   name="status"
-                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm"
+                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm max-[600px]:h-8 "
                 >
                   <option value="">Status tanlang</option>
                   <option value="pending">Kutilyatgan</option>
@@ -177,11 +177,11 @@ function OrderPost() {
                 </select>
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-end ">
                 <Button
                   type="primary"
                   htmlType="submit"
-                  className="w-[40%] h-11 mt-5 px-3"
+                  className="w-[40%] h-[40px] mt-5 px-3 max-[768px]:w-[60%]"
                 >
                   Yuborish
                 </Button>
