@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ZapravkaList = () => {
   return (
@@ -38,12 +39,12 @@ const ZapravkaList = () => {
                 </span>
               </td>
               <td className="py-4 px-4 whitespace-nowrap">
-                <a
-                  href="/hisobni-toldirish"
+                <Link
+                  to={"/hisobni-toldirish"}
                   className="text-blue-600 hover:text-blue-900"
                 >
                   Zapravka qilish
-                </a>
+                </Link>
               </td>
             </tr>
             <tr>
@@ -59,12 +60,12 @@ const ZapravkaList = () => {
                 </span>
               </td>
               <td className="py-4 px-4 whitespace-nowrap">
-                <a
-                  href="/hisobni-toldirish"
+                <Link
+                  to={"/hisobni-toldirish"}
                   className="text-blue-600 hover:text-blue-900"
                 >
                   Zapravka qilish
-                </a>
+                </Link>
               </td>
             </tr>
             <tr>
@@ -79,7 +80,14 @@ const ZapravkaList = () => {
                   Yopiq
                 </span>
               </td>
-              <td className="py-4 px-4 whitespace-nowrap"></td>
+              <td className="py-4 px-4 whitespace-nowrap">
+                {/* <Link
+                  to={"/hisobni-toldirish"}
+                  className="text-blue-600 hover:text-blue-900"
+                >
+                  Zapravka qilish
+                </Link> */}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -97,12 +105,12 @@ const ZapravkaList = () => {
           <p className="text-sm text-gray-600 mb-3">
             Toshkent sh., Yunusobod tumani
           </p>
-          <a
-            href="/hisobni-toldirish"
+          <Link
+            to={"/hisobni-toldirish"}
             className="block text-center w-full py-2 px-4 bg-blue-50 text-blue-600 rounded-md hover:bg-blue-100"
           >
             Zapravka qilish
-          </a>
+          </Link>
         </div>
 
         <div className="bg-white rounded-lg shadow p-4">
@@ -115,12 +123,12 @@ const ZapravkaList = () => {
           <p className="text-sm text-gray-600 mb-3">
             Toshkent sh., Chilonzor tumani
           </p>
-          <a
-            href="/hisobni-toldirish"
+          <Link
+            to={"/hisobni-toldirish"}
             className="block text-center w-full py-2 px-4 bg-blue-50 text-blue-600 rounded-md hover:bg-blue-100"
           >
             Zapravka qilish
-          </a>
+          </Link>
         </div>
 
         <div className="bg-white rounded-lg shadow p-4">
@@ -133,6 +141,12 @@ const ZapravkaList = () => {
           <p className="text-sm text-gray-600 mb-3">
             Toshkent sh., Sergeli tumani
           </p>
+          {/* <Link
+            to={"/hisobni-toldirish"}
+            className="block text-center w-full py-2 px-4 bg-blue-50 text-blue-600 rounded-md hover:bg-blue-100"
+          >
+            Zapravka qilish
+          </Link> */}
         </div>
       </div>
     </div>
