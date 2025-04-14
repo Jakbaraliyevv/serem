@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import Register from "../components/auth/register";
-import BenzinZapravkaVisual from "../components/userFace2";
 import Login from "../components/auth/login";
 import Home from "../pages/home";
 import Layout from "../outlet";
@@ -30,10 +29,7 @@ export const root = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
-      {
-        path: "profile2",
-        element: <BenzinZapravkaVisual />,
-      },
+
       {
         path: "buyurtmalar",
         element: <Buyurtmalar />,
@@ -41,11 +37,6 @@ export const root = createBrowserRouter([
       {
         path: "hisobni-toldirish",
         element: <OrderPost />,
-      },
-
-      {
-        path: "userface2",
-        element: <BenzinZapravkaVisual />,
       },
     ],
   },
