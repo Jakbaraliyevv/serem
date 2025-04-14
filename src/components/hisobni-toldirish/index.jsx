@@ -156,7 +156,7 @@ function OrderPost() {
                   min="1"
                   type="number"
                   step="1"
-                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm text-[15px] font-medium max-[600px]:h-8"
+                  className="w-full h-11 px-3 border border-gray-300 rounded-lg bg-white shadow-sm text-[1em] font-medium max-[600px]:h-8"
                   placeholder="Jami narxini kiriting"
                 />
               </div>
