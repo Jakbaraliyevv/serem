@@ -10,7 +10,7 @@
 .navbar2 {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 1999;
 }
 
 select {
@@ -49,4 +49,18 @@ select {
 .modal .ant-btn {
   width: 100px; /* Cancel tugmasining kengligi */
   font-size: 12px !important;
+}
+/* Notificationni yuqoriga joylashtirish */
+.custom-notification {
+  z-index: 999999 !important; /* Z-indexni o‘zgartiradi */
+  font-size: 16px !important; /* Katta ekranlar uchun matn o'lchami */
+  width: 300px !important; /* Kenglikni kattalashtirish */
+}
+
+/* Kichik ekranlar uchun matnni kichiklashtirish va kenglikni toraytirish */
+@media (max-width: 768px) {
+  .custom-notification {
+    font-size: 12px !important; /* Kichik matn */
+    width: 300px !important; /* Kenglikni kichiklashtirish */
+  }
 }
